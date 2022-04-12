@@ -27,11 +27,11 @@ class Carro extends Component {
       <div>
         
           <span style={styles.bubble}>
-              { cantidad !== 0 ?  <BubbleAlert value={cantidad} /> : '' } 
+              { cantidad !== 0 ?  <BubbleAlert value={cantidad} /> : null } 
 
           </span>
 
-        <button style={styles.carro}  onClick={ carro.length > 0 ?  mostrarCarroVisible : '' } >Carro</button>
+        <button style={styles.carro}  onClick={ carro.length > 0 ?  mostrarCarroVisible : null } >Carro</button>
         { esCarroVisible  ? 
         <DetallesCarro  carro={carro}
         esCarroVisible= {esCarroVisible}

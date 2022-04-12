@@ -22,18 +22,17 @@ class App extends Component {
     this.setState({ esCarroVisible: !this.state.esCarroVisible });
   };
   agregarAlCarro = (producto) => {
+    
     const { carro } = this.state;
-
     if (carro.find((p) => p.name === producto.name)) {
-      const newCarro = carro.map((pr) =>
-        pr.name === producto.name
-          ? {
-              ...pr,
-              cantidad: pr.cantidad + 1,
-            }
-          : pr
-      );
+      
+      const newCarro = carro.map((pr)=>{
+       
+        return pr.name === producto.name ? { ...pr, cantidad: pr.cantidad + 1, } : pr
+  
+      });
 
+      console.log(newCarro)
       return this.setState({ carro: newCarro });
     }
     return this.setState({
@@ -42,6 +41,10 @@ class App extends Component {
         cantidad: 1,
       }),
     });
+
+    
+
+
   };
   render() {
 
